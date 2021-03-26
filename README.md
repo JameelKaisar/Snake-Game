@@ -59,7 +59,7 @@ This function clears the screen and will work on all major operating systems. Re
 * For Mac/Linux, use "*clear = lambda: system('clear')*" and "*clear()*"
 * For Windows, use "*clear = lambda: system('cls')*" and "*clear()*"
 
-## Defining Function to Clear Screen
+## Defining Function for Handling Keystrokes
 ```python
 def getch():
     try:
