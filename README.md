@@ -562,3 +562,9 @@ This game is tested and is working on the following Operating Systems:
 * Ubuntu
 * Kali Linux
 * Tails OS
+
+# Timeline
+* *March 25, 2021* Snake Game Created
+* *March 26, 2021* Documentation Added
+* *March 27, 2021* Documentation Updated
+
