@@ -43,7 +43,7 @@ import threading
 * **system** is imported to clear game screen before printing the updated game screen.
 * **randint** is imported to place food randomly.
 * **sleep** is imported to control speed of snake.
-* **threading** is imported to create a seperate thread for taking keystrokes while main thread is running.
+* **threading** is imported to create a separate thread for taking keystrokes while main thread is running.
 
 ## Defining Function to Clear Screen
 ```python
@@ -83,7 +83,7 @@ def getch():
         return get_char
 ```
 
-Handling keystrokes does not come out of the box with Python. There are different modules for getting keystrokes depending on the OS. This function will handle keystrokes on all major operating systems. However this function may behave unexpectedly in some situations. This function imports **msvcrt** on Windows and **sys**, **termios** and **tty** on POSIX systems. This function will throw an *ImportError* if required modules are not found (*ModuleNotFoundError*).
+Handling keystrokes does not come out of the box with Python. There are different modules for getting keystrokes depending on the OS. This function will handle keystrokes on all major operating systems. However, this function may behave unexpectedly in some situations. This function imports **msvcrt** on Windows and **sys**, **termios** and **tty** on POSIX systems. This function will throw an *ImportError* if required modules are not found (*ModuleNotFoundError*).
 * For Windows, you can simply use "*from msvcrt import getch*"
 
 ## Defining Function to Print Game Screen
@@ -175,7 +175,7 @@ def get_nxt(board, snake, drn, classic):
             return (snake[-1][0]-drn[0]/2, snake[-1][1])
 ```
 
-This function takes **board**, **snake**, **drn** and **classic** as parameters and returns next position of snake head as tuple. Value of next poition of snake head depends on the size of game board, position of snake, keystokes of user and mode of game.
+This function takes **board**, **snake**, **drn** and **classic** as parameters and returns next position of snake head as tuple. Value of next position of snake head depends on the size of game board, position of snake, keystrokes of user and mode of game.
 
 ## Defining Function to Append Next Position to Snake
 ```python
@@ -306,9 +306,9 @@ key_thread.daemon = True
 key_thread.start()
 ```
 
-We create a seperate thread to take the keystrokes from user because we can't take keystrokes efficiently while running the game in same thread.
+We create a separate thread to take the keystrokes from user because we can't take keystrokes efficiently while running the game in same thread.
 * First line creates a new thread named **key_thread** and sets target function to **get_drn()**. We do not pass any arguments. If needed, we can pass arguments as tuple using *args=( )*.
-* Second line sets **key_thread** as daemon thread which means this thread is killed when the main thread finishes execution. Non-daemon threads continue running even after main thread finishes execution. In this case we don't need to take keystrokes after the game is over (i.e. after the main thread finishes execution), that's why we set **key_thread** as daemon thread.
+* Second line sets **key_thread** as daemon thread which means this thread is killed when the main thread finishes execution. Non-daemon threads continue running even after main thread finishes execution. In this case we don't need to take keystrokes after the game is over (i.e., after the main thread finishes execution), that's why we set **key_thread** as daemon thread.
 * Third line starts the **key_thread** which runs the **get_drn()** function in secondary thread.
 
 ### Starting the Game
