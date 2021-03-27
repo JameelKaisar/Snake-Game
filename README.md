@@ -83,7 +83,7 @@ def getch():
         return get_char
 ```
 
-Handling keystrokes does not come out of the box with Python. There are different modules for getting keystrokes depending on the OS. This function will handle keystrokes for all major operating systems. However this function may behave unexpectedly in some situations. This function imports **msvcrt** on Windows and **sys**, **termios** and **tty** on POSIX systems. This function will throw an *ImportError* if required modules are not found (*ModuleNotFoundError*).
+Handling keystrokes does not come out of the box with Python. There are different modules for getting keystrokes depending on the OS. This function will handle keystrokes on all major operating systems. However this function may behave unexpectedly in some situations. This function imports **msvcrt** on Windows and **sys**, **termios** and **tty** on POSIX systems. This function will throw an *ImportError* if required modules are not found (*ModuleNotFoundError*).
 * For Windows, you can simply use "*from msvcrt import getch*"
 
 ## Defining Function to Print Game Screen
@@ -175,7 +175,7 @@ def get_nxt(board, snake, drn, classic):
             return (snake[-1][0]-drn[0]/2, snake[-1][1])
 ```
 
-This function takes **board**, **snake**, **drn** and **classic** as parameters and returns next postion of snake head as tuple. Value of next poition of snake head depends on the size of game board, position of snake, keystokes of user and mode of game.
+This function takes **board**, **snake**, **drn** and **classic** as parameters and returns next position of snake head as tuple. Value of next poition of snake head depends on the size of game board, position of snake, keystokes of user and mode of game.
 
 ## Defining Function to Append Next Position to Snake
 ```python
@@ -198,9 +198,9 @@ def check_food(board, snake, food, score):
             return snake, food, score + ( 5 if score != 0 and score%5 == 0 and score%10 != 0 else 1)
 ```
 
-This function takes **board**, **snake**, **food** and **score** as parameters and updates the values of snake, food and score and return them.
-* If snake head is not at the position of food, this function removes tail position of snake.
-* If snake head is at the position of food, it generates new position of food using *randint()* and updates the value of score.
+This function takes **board**, **snake**, **food** and **score** as parameters and updates the values of snake, food and score and returns them.
+* If snake head is not at the position of food, this function removes the tail position of snake.
+* If snake head is at the position of food, it generates a new position for food using *randint()* and updates the value of score.
 * 1 is added to score for normal food and 5 is added for bonus food.
 * Bonus food is available after every 5 normal foods.
 
