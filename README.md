@@ -217,6 +217,12 @@ def check_play(board, snake, classic):
 This function takes **board**, **snake** and **classic** as parameters and checks if the snake has touched its body and also checks if the snake has touched border in case of constrained mode. If either of the two conditions is satisfied, the function returns *False*. Otherwise, the function returns *True*.
 
 ## Main Function
+### Clearing Screen
+```python
+clear()
+```
+This function simply clears the screen.
+
 ### Taking Input from User
 ```python
 # Minimum Value: 5, Recommended Value: 10
@@ -302,7 +308,7 @@ This block declares variable for storing the position of food and initializes it
 ### Creating Daemon Thread for taking Keystrokes
 ```python
 key_thread = threading.Thread(target=get_drn)
-key_thread.daemon = True
+key_thread.setDaemon(True)
 key_thread.start()
 ```
 
@@ -480,6 +486,9 @@ def check_play(board, snake, classic):
     return True
 
 
+clear()
+
+
 # Minimum Value: 5, Recommended Value: 10
 while 1:
     try:
@@ -536,7 +545,7 @@ while 1:
 
 
 key_thread = threading.Thread(target=get_drn)
-key_thread.daemon = True
+key_thread.setDaemon(True)
 key_thread.start()
 
 
@@ -567,4 +576,5 @@ This game is tested and is working on the following Operating Systems:
 * *March 25, 2021* Snake Game Created
 * *March 26, 2021* Documentation Added
 * *March 27, 2021* Documentation Updated
+* *March 28, 2021* Minor Fixes
 
