@@ -132,6 +132,9 @@ def check_play(board, snake, classic):
     return True
 
 
+clear()
+
+
 # Minimum Value: 5, Recommended Value: 10
 while 1:
     try:
@@ -188,7 +191,7 @@ while 1:
 
 
 key_thread = threading.Thread(target=get_drn)
-key_thread.daemon = True
+key_thread.setDaemon(True)
 key_thread.start()
 
 
